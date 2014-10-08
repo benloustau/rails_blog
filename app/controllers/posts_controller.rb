@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
+  
   def index
     @posts = Post.all
   end
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
     else
       flash[:notice] = "Sorry - a post was not made!"
       render :new
+    end
   end
 
   def edit
@@ -31,6 +33,7 @@ class PostsController < ApplicationController
     else 
       flash[:alert] = "Something went wrong with the update."
       render :edit
+    end
   end
 
   def destroy
