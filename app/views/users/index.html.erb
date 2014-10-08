@@ -2,10 +2,13 @@
 <p>Find a new friend below</p>
 
 <p><%= link_to "new user", new_user_path %></p>
+
 <ol>
 <% @user.each do |user| %>
-<li><%= link_to user.fname, user %> | 
-	(<%= user.location %>) |
-	<%= link_to 'delete', user, method: :delete, data: { confirm: "Are you sure?"}%></li>
+  <li>
+    <%= link_to user.fname, user %> | 
+    (<%= user.location %>) |
+    <%= link_to 'delete', user, method: :delete, data: { confirm: "Are you sure?"}%>
+  </li>
 <% end %>
 </ol>

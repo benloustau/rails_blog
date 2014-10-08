@@ -5,7 +5,7 @@
 
 <h3><%= @user.fname %>'s Posts</h3>
 <ol>
-<% @user.posts.each do |posts| %>
+<% @user.posts.each do |post| %>
 	<li><%= link_to post.body, post %></li>
 <%end%>
 </ol>
