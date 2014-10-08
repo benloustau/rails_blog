@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       post 'unfollow'
      end
   end    
-  resources :posts
+  resources :posts do
+    resouces :comments, except: [:index, :new, :edit,:show]
+   end 
   resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy'
 
