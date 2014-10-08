@@ -1,0 +1,22 @@
+<%= form_for @user do |f| %>
+
+	<% if @user.errors.any? %>
+		<ul>
+		<% @user.errors.full_messages.each do |meassage| %>
+		<l1><%= message %></l1>
+		<%end%>
+
+		</ul>
+	<%end%>	
+
+<%= f.label :fname %>
+<%= f.text_field :fname %> <br />
+<%= f.label :email %>
+<%= f.text_field :email %> <br />
+<%=f.label :location %>
+<%=f.text_field :location %> <br />
+<%= f.label :password %>
+<%= f.text_field :password %> <br />
+<%= f.submit %>
+
+<% end %>
