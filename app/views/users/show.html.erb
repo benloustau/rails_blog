@@ -15,8 +15,10 @@
 <ul>
 	<% @user.followeds.each do |user| %>
 	<li><%= link_to user.fname, user%></li>
+	<%end%>
 </ul>
 <hr />
+
 
 <% if current_user and @user != current_user %>
 	<% if current_user.followeds.include? @user %>
@@ -25,9 +27,8 @@
 		<%= link_to 'follow', follow_user_path(@user), method: :post %>
 	<% end %>
 <% end %>
-<p>
 
+<p>
 <%= link_to 'edit user', edit_user_path(@user) %> | 
 <%= link_to 'back to users', users_path %>
 </p>
-<%end%>
