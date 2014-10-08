@@ -1,6 +1,11 @@
 <h1>Post Feed</h1>
-<ol>
-<% @user.posts.each do |post| %>
-  <li><%= post.body %></li>
-<% end %>
-</ol>
+<ul>
+<% @posts.each do |post| %>
+	<li><%= post.body %></li>|
+ 		<ul>
+ 		<% post.comments.each do |comment| %>
+  			<li><%= comment.body %> | <%= link_to 'edit', edit_post_comment_path(post, comment) %></li>
+  		</ul>
+  <%end%>
+<%end%>
+</ul>

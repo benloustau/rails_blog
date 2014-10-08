@@ -8,8 +8,8 @@ Rails.application.routes.draw do
      end
   end    
   resources :posts do
-    resouces :comments, except: [:index, :new, :edit,:show]
-   end 
+    resources :comments, except: [:index, :new, :show]
+  end 
   resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy'
 

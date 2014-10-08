@@ -1,19 +1,23 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:create, :edit, :update, :destroy]
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      flash[:notice] = "New post created!"
+    @comment = Comment.new(post_params)
+    if @comment.save
+      flash[:notice] = "New comment created!"
       redirect_to @post
     else
-      flash[:notice] = "Sorry -you comment was not made!"
+      flash[:notice] = "Sorry! Your comment did not go through!"
       render :new
     end
+  end
+
+  def edit 
   end 
 
   def update
-    if @Comment.update(comment_params)
-      flash[:notice] = "Post updated!"
+    if @comment.update(comment_params)
+      flash[:notice] = "Comment updated!"
       redirect_to @post
     else 
       flash[:alert] = "Something went wrong with the update."
@@ -30,11 +34,11 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:post.id).permit(:body).merge(user_id: current_user.id)
+    params.require(:comment.id).permit(:body).merge(user_id: current_user.id)
   end
 
   def set_comment
-    @post = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
 
