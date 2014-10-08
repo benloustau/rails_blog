@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.where(email: params[:email]).first
     if @user and @user.password == params[:password]
-      session[:user_id] = @user.user_id
+      session[:user_id] = @user.id
       flash[:notice] = "Logged in!"
       redirect_to users_path
     else
