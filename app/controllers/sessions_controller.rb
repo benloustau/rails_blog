@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.where(email: params[:email])
+    @user = User.where(email: params[:email]).first
     if @user and @user.password == params[:password]
       session[:user_id] = @user.user_id
       flash[:notice] = "Logged in!"
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
   def destroy
     @user = User.find(session[:user_id])
     session[:user_id] = nil
-    redirect_to @user_id
+    redirect_to @user
   end
-  
+
 end

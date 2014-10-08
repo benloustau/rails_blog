@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy,:follow,:follow]
+	before_action :set_user, only: [:show, :edit, :update, :destroy,:follow,:unfollow]
 
 	def follow
 		@rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 	end	
 
 	def index
-		@user = User.all
+		@users = User.all
 	end
 	
 	def show
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:fname, :email, :password)
+		params.require(:user).permit(:fname, :lname, :email, :password, :location, :bio)
 	end	
 
 	def set_user
