@@ -1,28 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy,:follow,:unfollow]
 
-	def follow
-		@rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
-		if @rel.save
-			flash[:notice] = "followed!"
-			redirect_to @user
-		else
-		flash[:alert] = "Something went wrong"
-		redirect_to @user
-		end	
-	end
-	
-	def unfollow
-		@rel = Relationship.where(follower_id: current_user.id, followed_id: @user.id).first
-		if @rel and @rel.destroy
-			flash[:notice] = "unfollowed"
-			redirect_to @user
-		else
-			flash[:alert] = "Something went wrong"
-			redirect_to @user
-		end
-	end	
-
 	def index
 		@users = User.all
 	end
@@ -38,7 +16,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id	
-			flash[:notice] = "You did it. Welcome to tweeter"
+			flash[:notice] = "Welcome to our site."
 			redirect_to @user
 		else
 			flash[:alert] = "Hmmm. Something went wrong"
@@ -67,6 +45,29 @@ class UsersController < ApplicationController
 			flash[:alert] = "Could not delete. Sorry"
 			redirect_to users_path
 		end	
+	end	
+
+
+	def follow
+		@rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
+		if @rel.save
+			flash[:notice] = "followed!"
+			redirect_to @user
+		else
+		flash[:alert] = "Something went wrong"
+		redirect_to @user
+		end	
+	end
+	
+	def unfollow
+		@rel = Relationship.where(follower_id: current_user.id, followed_id: @user.id).first
+		if @rel and @rel.destroy
+			flash[:notice] = "unfollowed"
+			redirect_to @user
+		else
+			flash[:alert] = "Something went wrong"
+			redirect_to @user
+		end
 	end	
 
 	private
