@@ -1,0 +1,6 @@
+<h1>Post Feed</h1>
+<ol>
+<% @user.posts.each do |post| %>
+  <li><%= post.body %></li>
+<% end %>
+</ol>
