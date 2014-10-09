@@ -38,8 +38,12 @@ class PostsController < ApplicationController
 
   def destroy
       @post.destroy
+      if @post = Post.user.id
+      @post.destroy
       flash[:notice] = "Post was deleted."
       redirect_to root_path
+    else
+    end  
   end
 
   private

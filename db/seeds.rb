@@ -111,7 +111,7 @@ end
 
 post_6 = Post.create do |p|
 p.user_id = user_3.id
-p.body = "I hate @Aquavit twice last yeat and the diner menu is fantastic!"
+p.body = "I ate @Aquavit twice last yeat and the diner menu is fantastic!"
 end
 
 post_7 = Post.create do |p|
