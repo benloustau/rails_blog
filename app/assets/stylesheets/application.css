@@ -97,7 +97,7 @@ a {
 }
 
 .posts {
-  background-color: rgba(200, 200, 200, .12);
+  background-color: rgba(100, 100, 100, .12);
   margin-bottom: 10px;
 }
 
@@ -106,13 +106,13 @@ a {
 }
 
 .comments {
-  background-color: rgba(100, 100, 100, .12);
+/*  background-color: rgba(200, 200, 200, .12);*/
   padding: 5px;
 }
 
 
 .comment-form {
-  background-color: rgba(100, 100, 100, .12);
+/*  background-color: rgba(200, 200, 200, .12);*/
 }
 
 .post-container {
