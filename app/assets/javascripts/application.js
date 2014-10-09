@@ -16,8 +16,20 @@
 //= require_tree .
 
 $(document).ready(function(){
+
   $('.create-link').click(function(){
-    $('.form-container').toggle();
+    $('.form-container').toggle().animate({left: "40%"}, 500);
   });
+
+  $('.sign-in-link').click(function(){
+    $('.sign-in-container').toggle().animate({left: "40%"}, 500);
+  });
+
+  $('.post-form').click(function(){
+    $(this).animate({
+        height: ($(this).height()==30) ? 100 : 30
+    });
+  });
+
 
 })

@@ -8,8 +8,11 @@
       <div>Bio: <%= @user.bio %></div>
     </div>
 
-    <div>
-      <!-- form to make posts -->
+    <div class="post-container">
+      <%= form_for @post do |f| %>
+        <p><%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %></p>
+        <p><%= f.submit class: "submit-btn" %></p>
+      <% end %>
     </div>
 
 

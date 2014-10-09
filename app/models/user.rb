@@ -9,6 +9,6 @@ validates_presence_of :fname, :lname, :email, :password, :location, :bio
 
 
   def fullname
-    fname + lname
+    fname + " " + lname
   end
 end
