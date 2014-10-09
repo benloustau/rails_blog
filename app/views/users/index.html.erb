@@ -20,12 +20,6 @@
   <div class="right_column">
     <h3>Friend's Post Feed</h3>
 
-    <ul>
-      <% @user.followeds.each do |user| %>
-      <li><%= link_to user.fname, user%></li>
-      <%end%>
-    </ul>
-
     render partial 
 
 
