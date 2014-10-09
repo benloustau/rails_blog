@@ -14,7 +14,37 @@
  *= require_self
  */
 body {
-  font-family: Helvetica; 
+  font-family: "Raleway", Helvetica;
+  background: url(https://unsplash.imgix.net/45/eDLHCtzRR0yfFtU0BQar_sylwiabartyzel_themap.jpg?q=75&fm=jpg&auto=format&s=98e65d0d3f8fcc55b075259021149508) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h3 {
+  font-family: "Lobster";
+  font-weight: lighter;
+}
+
+.title {
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  color: #fff;
+}
+
+.title h3 {
+  font-size: 60px;
+}
+
+.title p {
+  font-size: 25px;
+}
+/*-----------nav------------------*/
+nav {
+  text-align: right;
 }
 
 ul {
@@ -27,6 +57,7 @@ li {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 .wrapper {
@@ -39,7 +70,7 @@ a {
   padding: 10px;
   vertical-align: top;
   display: inline-block;
-  background: #DBDBDB;
+  background: rgba(200, 200, 200, .45);
 }
 
 .profile-container {
@@ -51,29 +82,48 @@ a {
   padding: 10px;
   vertical-align: top;
   display: inline-block;
-  background: #DBDBDB;
+  background: rgba(200, 200, 200, .45);
+  border-radius: 5px;
 }
 
 .posts {
   background-color: #EBEBEB;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   margin-bottom: 10px;
+}
+
+.posts p {
+  padding: 5px;
 }
 
 .comments {
   background-color: lightgrey;
-  border: 1px solid black;
   padding: 5px;
 }
 
-.post-feed ul li {
-  border: 1px solid grey;
+
+.comment-form {
+  background-color: lightgrey;
 }
 
 .post-container {
-  border: 1px solid black;
   margin-bottom: 20px;
 }
 
 .time-text {
   font-size: 12px;
+}
+
+/*----------------- forms----------------------*/
+
+.form-container {
+  width: 100%;
+  display: none;
+
+}
+
+.sign-up {
+  text-align: right;
+  color: #fff;
 }
