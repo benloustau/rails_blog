@@ -1,32 +1,5 @@
-<<<<<<< HEAD
-<!-- landing page for sign in, sign up andabout/landing page -->
-
-<% if current_user %>
-<!-- user homepage -->
-  <h2><%= "Hello #{current_user.fname}" %></h2>
-  
-  <div class="left_column">
-    <h3>All users</h3>
-    <ol>
-    <% @users.each do |user| %>
-      <li>
-        <%= link_to user.fname, user %> | 
-        <%= user.location %> |
-      </li>
-    <% end %>
-    </ol>
-  </div>
-
-
-  <div class="right_column">
-    <h3>Friend's Post Feed</h3>
-
-    render partial 
-=======
 <!-- If user is not signed in - landing page for sign in, sign up and about -->
 <!-- Else, user's homepage -->
->>>>>>> 9b69322bc2bf2da490fbd73e8002bcad6c99f958
-
 <div class="wrapper">
 
 <!-- user homepage -->

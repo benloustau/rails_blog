@@ -85,52 +85,52 @@ User.find(5).followeds << User.find(4)
 #------------ posts ------------------------
 
 post_1 = Post.create do |p|
-p.user_id = user_1
+p.user_id = user_1.id
 p.body = "I love this blog!"
 end
 
 post_2 = Post.create do |p|
-p.user_id = user_1 
+p.user_id = user_1.id
 p.body = "So many new creations from Great Chefs!"
 end
 
 post_3 = Post.create do |p|
-p.user_id = user_2
+p.user_id = user_2.id
 p.body = "Mario Batali is giving a demonstration this weekend at the botanical Gardens!"
 end
 
 post_4 = Post.create do |p|
-p.user_id = user_2
+p.user_id = user_2.id
 p.body = "Daniel loses a Michelin Star this week!"
 end
 
 post_5 = Post.create do |p|
-p.user_id = user_3
+p.user_id = user_3.id
 p.body = "Aquavit gets upgraded to two Michelin star status!"
 end
 
 post_6 = Post.create do |p|
-p.user_id = user_3
+p.user_id = user_3.id
 p.body = "I hate @Aquavit twice last yeat and the diner menu is fantastic!"
 end
 
 post_7 = Post.create do |p|
-p.user_id = user_4
+p.user_id = user_4.id
 p.body = "Who do you guys think will win Hell's Kitchen this year?!"
 end
 
 post_8 = Post.create do |p|
-p.user_id = user_4
+p.user_id = user_4.id
 p.body = "I put my money on Jason!"
 end
 
 post_9 = Post.create do |p|
-p.user_id = user_5
+p.user_id = user_5.id
 p.body = "Kale is just a phase. People will get over it!"
 end
 
 post_10 = Post.create do |p|
-p.user_id = user_5
+p.user_id = user_5.id
 p.body = "New spots in Brooklyn make Great food at affordable price. HINT: CAFE MOGADOR!"
 end
 
