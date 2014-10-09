@@ -17,10 +17,59 @@ body {
   font-family: Helvetica; 
 }
 
+ul {
+  padding-left: 0px;
+}
+
 li {
   list-style: none;
 }
 
 a {
   text-decoration: none;
+}
+
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+/*----------left-----------*/
+.left-column {
+  width: 30%;
+  padding: 10px;
+  vertical-align: top;
+  display: inline-block;
+  background: #DBDBDB;
+}
+
+.profile-container {
+  background: #DBDBDB;
+}
+/*---------right-----------*/
+.right-column {
+  width: 65%;
+  padding: 10px;
+  vertical-align: top;
+  display: inline-block;
+  background: #DBDBDB;
+}
+
+.posts {
+  background-color: #EBEBEB;
+  margin-bottom: 10px;
+}
+
+.comments {
+  background-color: lightgrey;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.post-feed ul li {
+  border: 1px solid grey;
+}
+
+.post-container {
+  border: 1px solid black;
+  margin-bottom: 20px;
 }

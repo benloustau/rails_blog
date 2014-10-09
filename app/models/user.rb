@@ -7,4 +7,8 @@ has_many :reverse_relationships, foreign_key: :followed_id, class_name: "Relatio
 has_many :followers, through: :reverse_relationships, source: :follower
 validates_presence_of :fname, :lname, :email, :password, :location, :bio
 
+
+  def fullname
+    fname + lname
+  end
 end

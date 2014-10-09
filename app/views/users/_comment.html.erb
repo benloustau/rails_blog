@@ -1,0 +1,7 @@
+<li class="comments">
+  <p>
+    <%= link_to comment.user.fullname, user_path(comment.user.id) %>
+    <div class="comment-container"><%= comment.body %></div>
+  </p>
+</li>
+

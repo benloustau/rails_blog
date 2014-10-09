@@ -1,0 +1,28 @@
+<div class="post-container">
+  <li class="posts">
+    <span>
+      <%= post.user.fname%> <%= post.user.lname %>
+    </span>
+    <span>
+      <%= post.created_at.strftime("posted at %I:%M%p on %m/%d/%Y") %>
+    </span>
+
+    <p>
+      <%= post.body %>
+    </p>
+
+    <ul class="comment-list">
+      <% post.comments.each do |comment| %>
+        <%= render partial: 'comment', locals: { comment: comment, post: post } %>
+      <%end%>
+    </ul>
+    
+    <div class="comment-form">
+      <%= form_for Comment.new, url: post_comments_path(post.id) do |f| %>
+        <%= f.label :body, "Comment" %>
+        <%= f.text_area :body %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </li>
+</div>
