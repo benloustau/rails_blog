@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end 
   resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy'
+  #delete '/post', to: 'posts#destroy'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
