@@ -1,0 +1,11 @@
+<li><%= post.body %></li>
+
+<% post.comments.each do |comment| %>
+  <%= render partial: 'comment', locals: { comment: comment, post: post } %>
+<%end%>
+
+<%= form_for Comment.new, url: post_comments_path(post.id) do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %> <br />
+  <%= f.submit %>
+<% end %>

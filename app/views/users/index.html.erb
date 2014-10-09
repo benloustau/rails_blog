@@ -1,45 +1,44 @@
 <!-- landing page for sign in, sign up andabout/landing page -->
+<div class="wrapper">
+  <% if current_user %>
+  <!-- user homepage -->
 
-<% if current_user %>
-<!-- user homepage -->
-  <h2><%= "Hello #{current_user.fname}" %></h2>
-  
-  <div class="left_column">
-    <h3>All users</h3>
-    <ol>
-    <% @users.each do |user| %>
-      <li>
-        <%= link_to user.fname, user %> | 
-        <%= user.location %> |
-      </li>
-    <% end %>
-    </ol>
-  </div>
+    <div class="left-column">
+      <div class="profile-container">
+        <h2><%= "Hello #{current_user.fname}" %></h2>
+      </div>
 
 
-  <div class="right_column">
-    <h3>Friend's Post Feed</h3>
+      <h3>All users</h3>
+      <ol>
+        <% @users.each do |user| %>
+          <li>
+            <%= link_to user.fname, user %> |
+            <%= user.location %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
 
-    <ul>
-      <% @user.followeds.each do |user| %>
-      <li><%= link_to user.fname, user%></li>
-      <%end%>
-    </ul>
+    <div class="right-column">
+      <h3>Friend's Post Feed</h3>
 
-    render partial 
+      <ul>
+        <% @posts.each do |post| %>
+          <%= render partial: 'post', locals: { post: post } %>
+        <%end%>
+      </ul>
 
-
-  </div>
-  </div>
-
+    </div>
 
 
-<%else%>
-  <h1>Welcome to rails_blog</h1>
-  <p>A place to share your favorite recipes and connect with other homecooks!</p>
-  <li><%= link_to "Sign up", new_user_path %> |
-  <%= link_to "Sign in", new_session_path %></li>
-<%end%>
-
+  <%else%>
+  <!-- if not logged in. -->
+    <h1>Welcome to rails_blog</h1>
+    <p>A place to share your favorite recipes and connect with other homecooks!</p>
+    <div><%= link_to "Sign up", new_user_path %></div>
+    <div><%= link_to "Sign in", new_session_path %></div>
+  <%end%>
+</div>
 
 

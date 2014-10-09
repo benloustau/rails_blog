@@ -24,3 +24,26 @@ li {
 a {
   text-decoration: none;
 }
+
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.left-column {
+  width: 30%;
+  vertical-align: top;
+  display: inline-block;
+  background: #DBDBDB;
+}
+
+.right-column {
+  width: 65%;
+  vertical-align: top;
+  display: inline-block;
+  background: #DBDBDB;
+}
+
+.profile-container {
+  background: #DBDBDB;
+}
