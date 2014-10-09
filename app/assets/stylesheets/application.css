@@ -59,15 +59,17 @@ a {
   margin-bottom: 10px;
 }
 
-/*.comments {
-  background-color: green;
-}*/
+.comments {
+  background-color: lightgrey;
+  border: 1px solid black;
+  padding: 5px;
+}
 
 .post-feed ul li {
   border: 1px solid grey;
 }
 
 .post-container {
-  border: 1px solid red;
+  border: 1px solid black;
   margin-bottom: 20px;
 }

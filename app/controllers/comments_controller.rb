@@ -1,15 +1,13 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:create, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
 
   def create
-    @comment = Comment.new(post_params)
-    if @comment.save
-      flash[:notice] = "New comment created!"
-      redirect_to @post
-    else
-      flash[:notice] = "Sorry! Your comment did not go through!"
-      render :new
-    end
+    @comment = Comment.new
+    @comment.body = params[:comment][:body]
+    @comment.user_id = current_user.id
+    @comment.post_id = params[:post_id]
+    @comment.save
+    redirect_to users_path
   end
 
   def edit 
@@ -32,10 +30,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  def comment_params
-    params.require(:comment.id).permit(:body).merge(user_id: current_user.id)
-  end
 
   def set_comment
     @comment = Comment.find(params[:id])
