@@ -8,6 +8,12 @@
     <div class="left-column">
       <div class="profile-container">
         <h3><%= "Hello #{current_user.fname}" %></h3>
+        <div class="post-container">
+          <%= form_for @post do |f| %>
+            <p><%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %></p>
+            <p><%= f.submit class: "submit-btn" %></p>
+          <% end %>
+        </div>
       </div>
 
       <h3>All users</h3>
@@ -43,10 +49,5 @@
   <%end%>
 </div>
 
-<div class="sign-up">
-  <p class="create-link">Create a new account today!<p>
-  <%= render 'form' %>
-  
-</div>
 
 

@@ -55,6 +55,10 @@ li {
   list-style: none;
 }
 
+nav ul li {
+  color: #fff;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -74,7 +78,13 @@ a {
 }
 
 .profile-container {
-  background: #DBDBDB;
+  /*background: #DBDBDB;*/
+}
+
+.post-container {
+  padding-bottom: 20px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 /*---------right-----------*/
 .right-column {
@@ -87,9 +97,7 @@ a {
 }
 
 .posts {
-  background-color: #EBEBEB;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  background-color: rgba(200, 200, 200, .12);
   margin-bottom: 10px;
 }
 
@@ -98,13 +106,13 @@ a {
 }
 
 .comments {
-  background-color: lightgrey;
+  background-color: rgba(100, 100, 100, .12);
   padding: 5px;
 }
 
 
 .comment-form {
-  background-color: lightgrey;
+  background-color: rgba(100, 100, 100, .12);
 }
 
 .post-container {
@@ -120,10 +128,70 @@ a {
 .form-container {
   width: 100%;
   display: none;
-
+  position: fixed;
 }
 
 .sign-up {
-  text-align: right;
+  text-align: left;
   color: #fff;
+}
+
+.form-control {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+.submit-btn {
+  font-size: 16px;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+.sign-in-container {
+  width: 30%;
+  display: none;
+}
+
+.post-form {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+.comment-form .form-control {
+  height: 20px;
+}
+
+.comment-form .submit-btn {
+  font-size: 14px;
+}
+/*---------------buttons--------------------*/
+.delete-btn {
+  background-color: #fff;
+  color: #000;
+  padding: 4px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.delete-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.post-delete {
+  font-size: 14px;
+  margin-left: 95%;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+/*----------------profile page-----------------*/
+.user-post {
+  border-top: 1px solid grey;
 }

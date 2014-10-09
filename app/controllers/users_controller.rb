@@ -5,9 +5,11 @@ class UsersController < ApplicationController
 		@users = User.all
     @posts = Post.all
 		@user = User.new
+		@post = Post.new
 	end
 	
 	def show
+		@post = Post.new
 	end
 
 	def new
