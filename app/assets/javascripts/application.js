@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function(){
+  $('.create-link').click(function(){
+    $('.form-container').toggle();
+  });
+
+})

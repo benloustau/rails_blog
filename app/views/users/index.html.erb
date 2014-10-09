@@ -7,7 +7,7 @@
 
     <div class="left-column">
       <div class="profile-container">
-        <h2><%= "Hello #{current_user.fname}" %></h2>
+        <h3><%= "Hello #{current_user.fname}" %></h3>
       </div>
 
       <h3>All users</h3>
@@ -36,11 +36,17 @@
 
   <%else%>
   <!-- if not logged in. -->
-    <h1>Welcome to rails_blog</h1>
-    <p>A place to share your favorite recipes and connect with other homecooks!</p>
-    <div><%= link_to "Sign up", new_user_path %></div>
-    <div><%= link_to "Sign in", new_session_path %></div>
+    <div class="title">
+      <h3>Been There?</h3>
+      <p>A place to blog about about your favorite places to eat in the city!</p>
+    </div>
   <%end%>
+</div>
+
+<div class="sign-up">
+  <p class="create-link">Create a new account today!<p>
+  <%= render 'form' %>
+  
 </div>
 
 
