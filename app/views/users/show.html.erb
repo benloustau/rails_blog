@@ -35,12 +35,20 @@
 
   <div class="right-column">
     <h3><%= @user.fname %>'s Posts</h3>
-    <ol>
-    <% @user.posts.each do |post| %>
-    	<li><%= link_to post.body, post %></li>
     
+    <% @user.posts.each do |post| %>
+      <p class="user-post">
+        <p class="post-delete">
+          <%= link_to 'x', post, method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
+        </p>
+        <%= post.body %>
+        <span class="time-text">
+          <%= post.created_at.strftime("posted at %I:%M%p on %m/%d/%Y") %>
+        </span>
+      </p>
+
     <%end%>
-    </ol>
+  
   </div>
 </div>
 

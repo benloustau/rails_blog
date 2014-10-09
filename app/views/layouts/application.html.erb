@@ -16,8 +16,9 @@
   			<% if current_user %>
   				<li>
             <span><%= "Hello #{current_user.fname}" %> |</span>
-    				<span><%= link_to "Sign out", logout_path, method: :delete %> |</span>
-            <span><%= link_to "Home", users_path %></span>
+            <span><%= link_to "Home", users_path %> |</span>
+            <span><%= link_to "Profile", current_user %> |</span>
+    				<span><%= link_to "Sign out", logout_path, method: :delete %></span>
           </li>
   			<%else%>
   				<li>
