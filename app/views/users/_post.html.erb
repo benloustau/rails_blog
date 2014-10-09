@@ -1,11 +1,15 @@
-<li><%= post.body %></li>
+<div class="post-container">
+  <li class="posts">
+    <%= post.body %>
 
-<% post.comments.each do |comment| %>
-  <%= render partial: 'comment', locals: { comment: comment, post: post } %>
-<%end%>
+    <% post.comments.each do |comment| %>
+      <%= render partial: 'comment', locals: { comment: comment, post: post } %>
+    <%end%>
 
-<%= form_for Comment.new, url: post_comments_path(post.id) do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %> <br />
-  <%= f.submit %>
-<% end %>
+    <%= form_for Comment.new, url: post_comments_path(post.id) do |f| %>
+      <%= f.label :body, "Comment" %>
+      <%= f.text_area :body %>
+      <%= f.submit %>
+    <% end %>
+  </li>
+</div>

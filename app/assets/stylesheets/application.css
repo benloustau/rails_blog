@@ -17,6 +17,10 @@ body {
   font-family: Helvetica; 
 }
 
+ul {
+  padding-left: 0px;
+}
+
 li {
   list-style: none;
 }
@@ -29,16 +33,10 @@ a {
   width: 900px;
   margin: 0 auto;
 }
-
+/*----------left-----------*/
 .left-column {
   width: 30%;
-  vertical-align: top;
-  display: inline-block;
-  background: #DBDBDB;
-}
-
-.right-column {
-  width: 65%;
+  padding: 10px;
   vertical-align: top;
   display: inline-block;
   background: #DBDBDB;
@@ -46,4 +44,30 @@ a {
 
 .profile-container {
   background: #DBDBDB;
+}
+/*---------right-----------*/
+.right-column {
+  width: 65%;
+  padding: 10px;
+  vertical-align: top;
+  display: inline-block;
+  background: #DBDBDB;
+}
+
+.posts {
+  background-color: #EBEBEB;
+  margin-bottom: 10px;
+}
+
+/*.comments {
+  background-color: green;
+}*/
+
+.post-feed ul li {
+  border: 1px solid grey;
+}
+
+.post-container {
+  border: 1px solid red;
+  margin-bottom: 20px;
 }

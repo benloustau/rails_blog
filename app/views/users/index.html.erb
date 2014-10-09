@@ -1,13 +1,15 @@
-<!-- landing page for sign in, sign up andabout/landing page -->
+<!-- If user is not signed in - landing page for sign in, sign up and about -->
+<!-- Else, user's homepage -->
+
 <div class="wrapper">
+
+<!-- user homepage -->
   <% if current_user %>
-  <!-- user homepage -->
 
     <div class="left-column">
       <div class="profile-container">
         <h2><%= "Hello #{current_user.fname}" %></h2>
       </div>
-
 
       <h3>All users</h3>
       <ol>
@@ -20,15 +22,16 @@
       </ol>
     </div>
 
+
     <div class="right-column">
-      <h3>Friend's Post Feed</h3>
-
-      <ul>
-        <% @posts.each do |post| %>
-          <%= render partial: 'post', locals: { post: post } %>
-        <%end%>
-      </ul>
-
+      <h3>Friend's Posts</h3>
+      <div class="post-feed">
+        <ul>
+          <% @posts.each do |post| %>
+            <%= render partial: 'post', locals: { post: post } %>
+          <%end%>
+        </ul>
+      </div>
     </div>
 
 
