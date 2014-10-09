@@ -1,7 +1,10 @@
 <li class="comments">
-  <p>
+  <div>
     <%= link_to comment.user.fullname, user_path(comment.user.id) %>
-    <div class="comment-container"><%= comment.body %></div>
-  </p>
+    <%= comment.body %>
+    <span class="time-text">
+      <%= comment.created_at.strftime("posted at %I:%M%p on %m/%d/%Y") %>
+    </span>
+  </div>
 </li>
 
