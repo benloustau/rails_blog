@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def create
     @comment = Comment.new
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     flash[:notice] = "Comment was deleted."
-    redirect_to users_path
+    redirect_to root_path
   end
 
   private
