@@ -15,11 +15,12 @@
  */
 body {
   font-family: "Raleway", Helvetica;
-  background: url(https://unsplash.imgix.net/45/eDLHCtzRR0yfFtU0BQar_sylwiabartyzel_themap.jpg?q=75&fm=jpg&auto=format&s=98e65d0d3f8fcc55b075259021149508) no-repeat center center fixed; 
+  background-color: #f1f1f1;
+  /*background: url(https://unsplash.imgix.net/45/eDLHCtzRR0yfFtU0BQar_sylwiabartyzel_themap.jpg?q=75&fm=jpg&auto=format&s=98e65d0d3f8fcc55b075259021149508) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 h3 {
@@ -44,7 +45,20 @@ h3 {
 }
 /*-----------nav------------------*/
 nav {
+  padding: 5px;
   text-align: right;
+  background-color: rgba(0, 0, 0, .75);
+  height: 54px;
+  margin: -16px -8px 0px -8px;
+}
+
+nav .login-link-wrapper {
+  line-height: 54px;
+  padding-right: 10px;
+}
+
+.login-link-wrapper span {
+  cursor: pointer;
 }
 
 ul {
@@ -59,9 +73,23 @@ nav ul li {
   color: #fff;
 }
 
+nav span {
+  color: #fff;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  color: darkgrey;
+}
+
 a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 .wrapper {
@@ -74,7 +102,8 @@ a {
   padding: 10px;
   vertical-align: top;
   display: inline-block;
-  background: rgba(200, 200, 200, .45);
+  background: #fff;
+  border-radius: 5px;
 }
 
 .profile-container {
@@ -82,9 +111,7 @@ a {
 }
 
 .post-container {
-  padding-bottom: 20px;
   border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
 }
 /*---------right-----------*/
 .right-column {
@@ -92,7 +119,7 @@ a {
   padding: 10px;
   vertical-align: top;
   display: inline-block;
-  background: rgba(200, 200, 200, .45);
+  background: #fff;
   border-radius: 5px;
 }
 
@@ -112,7 +139,7 @@ a {
 
 
 .comment-form {
-/*  background-color: rgba(200, 200, 200, .12);*/
+  padding-bottom: 20px;
 }
 
 .post-container {
@@ -151,7 +178,7 @@ a {
   color: #fff;
 }
 
-.sign-in-container {
+#sign-in-form {
   width: 30%;
   display: none;
 }

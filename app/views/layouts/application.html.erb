@@ -10,42 +10,40 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<nav>
-      <ul>
-  			<% if current_user %>
-  				<li>
-            <span><%= "Hello #{current_user.fname}" %> |</span>
+
+  <header>
+    <nav>
+      <div class="login-link-wrapper">
+        <% if current_user %>
+            <span><%= link_to "Hello #{current_user.fname}", current_user %> |</span>
             <span><%= link_to "Home", users_path %> |</span>
-            <span><%= link_to "Profile", current_user %> |</span>
-    				<span><%= link_to "Sign out", logout_path, method: :delete %></span>
-          </li>
-  			<%else%>
-  				<li>
-            <span><%= link_to "Home", users_path %></span> |
+            <span><%= link_to "Sign out", logout_path, method: :delete %></span>
+        <%else%>
+            <span><%= link_to "Home", root_path %> |</span>
 
-            <span class="sign-in">
-              <span class="sign-in-link">Sign In</span>
-              <span class="sign-in-container">
-                <%= form_tag('/sessions', method: :post) do %>
-                  <p><%= text_field_tag 'email', nil, placeholder: 'Email', class: "form-control"%><p/>
-                  <p><%= password_field_tag 'password', nil, placeholder: 'Password', class: "form-control" %><p/>
-                  <p><%= submit_tag 'Sign In', class: 'submit-btn' %></p>
-                <% end %>
-              </span> |
-
-              <span class="sign-up">
-                <span class="create-link">Create a new account today!<p>
-                <%= render 'form' %>
-              </span>
+            <span>
+              <a id="sign-in" href="#" class="sign-in-link">Sign In</a> |
             </span>
-          </li>
-  			<%end%>
-      </ul>
-		</nav>
-	</header>
+
+            <span>
+              <a id="sign-up" href="#" class="create-link">Create a new account today!</a>
+              <%= render 'form' %>
+            </span>
+
+            <span>
+              <%= form_tag('/sessions', method: :post, id: 'sign-in-form') do %>
+                <p><%= text_field_tag 'email', nil, placeholder: 'Email', class: "form-control"%><p/>
+                <p><%= password_field_tag 'password', nil, placeholder: 'Password', class: "form-control" %><p/>
+                <p><%= submit_tag 'Sign In', class: 'submit-btn' %></p>
+              <% end %>
+            </span>
+        <%end%>
+      </div>
+    </nav>
+  </header>
+
 <%= flash[:notice] if flash[:notice] %>
-<%= flash[:alert] if flash[:alert] %>	
+<%= flash[:alert] if flash[:alert] %>
 <%= yield %>
 
 
