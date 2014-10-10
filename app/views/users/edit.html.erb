@@ -1,9 +1,9 @@
 <div class="wrapper">
   <p class="edit-title">Edit your profile below!</p>
 
-  <%= form_for @user do |f| %>
+<%= form_for @user, :html => { :multipart => true} do |f| %>
 
-    <div class="form-group">
+  <div class="form-group">
 
       <div>
         <%= image_tag "placeholder.png", class: 'placeholder-img' %>

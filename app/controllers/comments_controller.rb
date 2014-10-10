@@ -28,9 +28,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    if current_user.id == @comment.user.id
     @comment.destroy
     flash[:notice] = "Comment was deleted."
     redirect_to root_path
+    else
+    flash[:notice] = "You are not the owner of this comment"
+    redirect_to root_path
+    end  
   end
 
   private
