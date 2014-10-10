@@ -61,13 +61,14 @@ h3 {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(220, 220, 200, .4);
+  /*background: rgba(220, 220, 200, .4);*/
+  background: rgba(46, 20, 10, 0.1);
 }
 
 nav {
 /*  padding: 5px;
 */  text-align: right;
-  background-color: rgba(0, 0, 0, .75);
+  background-color: rgba(0, 0, 0, .7);
   height: 54px;
 /*  margin: -16px -8px 0px -8px;
 */}
@@ -200,7 +201,9 @@ a {
   left: 0;
   right: 0;
   padding-left: 70px;
-  background: rgba(220, 160, 160, .2);
+  /*background: rgba(220, 160, 160, .2);*/
+  background: rgba(62, 55, 57, 0.2);
+  border-radius: 4px;
 }
 
 .sign-up {
