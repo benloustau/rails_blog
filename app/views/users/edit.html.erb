@@ -1,6 +1,6 @@
 <h1>Edit your profile below!</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => { :multipart => true} do |f| %>
 
     <div class="form-group">
         <%= f.label :avatar, class: 'col-sm-2 control-label'  %>

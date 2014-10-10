@@ -4,7 +4,7 @@
   <div class="left-column">
     <div class="profile-container">
       <h3><%= @user.fname %>'s Profile Page</h3>
-      <div id="img"><%= image_tag(current_user.avatar.url) %></div>
+      <div id="img"><%= image_tag @user.avatar.url(:medium) %></div>
       <p><h3>Location:</h3> <%= @user.location %></p>
       <div><h3>Bio:</h3> <%= @user.bio %> <br><br><%= button_to 'Edit Profile', edit_user_path, method: :get %></div>
     </div>
@@ -42,7 +42,9 @@
       <div class="posts post-container">
 
         <div class="post-delete">
+        <% if current_user == @post.user %>
           <%= link_to 'x', post, method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
+          <%end%>
         </div>
 
         <div>

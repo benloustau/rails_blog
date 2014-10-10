@@ -7,15 +7,25 @@ has_many :reverse_relationships, foreign_key: :followed_id, class_name: "Relatio
 has_many :followers, through: :reverse_relationships, source: :follower
 validates_presence_of :fname, :lname, :email, :password, :location, :bio
 
-validates :avatar,
-attachment_content_type: { content_type: /\Aimage\/.*\Z/ },
-attachment_size: { less_than: 5.megabytes }
- 
-has_attached_file :avatar, styles: {thumb: '100x100>', square: '200x200#', medium: '300x300>'}
+has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+	def create
+  @user = User.create( user_params )
+	end
 
 
   def fullname
     fname + " " + lname
   end
+
+private
+
+# Use strong_parameters for attribute whitelisting
+# Be sure to update your create() and update() controller methods.
+
+def user_params
+  params.require(:user).permit(:avatar)
 end
+end
+

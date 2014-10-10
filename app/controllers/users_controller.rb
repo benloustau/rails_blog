@@ -30,7 +30,6 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user.save
 	end
 
 	def update
