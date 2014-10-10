@@ -12,15 +12,18 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+
   def create
     @post = Post.new(post_params)
-    if @post.save
+
+    unless post_params[:body].empty?
+      @post.save
       flash[:notice] = "New post created!"
-      redirect_to @post
     else
       flash[:notice] = "Sorry - a post was not made!"
-      render :new
     end
+
+    redirect_to users_url
   end
 
   def edit
