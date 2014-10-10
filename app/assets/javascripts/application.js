@@ -16,13 +16,22 @@
 //= require_tree .
 
 $(document).ready(function(){
-
-  $('.create-link').click(function(){
-    $('.form-container').toggle().animate({left: "40%"}, 500);
+  $('.shim').on('click', function () {
+    $(this).hide();
+    $('#sign-in-form').hide().css('top', "50%");
+    $('.sign-up-form').hide().css('top', "50%");
   });
 
-  $('.sign-in-link').click(function(){
-    $('.sign-in-container').toggle().animate({left: "40%"}, 500);
+  $('#sign-up').click(function(e){
+    e.preventDefault();
+    $('.shim').show();
+    $('.sign-up-form').show().animate({top: "90px"}, 200);
+  });
+
+  $('#sign-in').click(function(e){
+    e.preventDefault();
+    $('.shim').show();
+    $('#sign-in-form').show().animate({top: "90px"}, 200);
   });
 
   $('.post-form').click(function(){
@@ -30,6 +39,4 @@ $(document).ready(function(){
         height: ($(this).height()==30) ? 100 : 30
     });
   });
-
-
-})
+});

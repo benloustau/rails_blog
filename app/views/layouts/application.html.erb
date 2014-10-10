@@ -3,14 +3,13 @@
 <head>
   <title>RailsBlog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Raleway&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-
   <header>
     <nav>
       <div class="login-link-wrapper">
@@ -22,31 +21,37 @@
             <span><%= link_to "Home", root_path %> |</span>
 
             <span>
-              <a id="sign-in" href="#" class="sign-in-link">Sign In</a> |
+              <a id="sign-in" href="#">Sign In</a> |
             </span>
 
             <span>
-              <a id="sign-up" href="#" class="create-link">Create a new account today!</a>
-              <%= render 'form' %>
+              <a id="sign-up" href="#">Create a new account today!</a>
             </span>
 
-            <span>
-              <%= form_tag('/sessions', method: :post, id: 'sign-in-form') do %>
-                <p><%= text_field_tag 'email', nil, placeholder: 'Email', class: "form-control"%><p/>
-                <p><%= password_field_tag 'password', nil, placeholder: 'Password', class: "form-control" %><p/>
-                <p><%= submit_tag 'Sign In', class: 'submit-btn' %></p>
-              <% end %>
-            </span>
         <%end%>
       </div>
     </nav>
   </header>
 
-<%= flash[:notice] if flash[:notice] %>
-<%= flash[:alert] if flash[:alert] %>
-<%= yield %>
+  <section>
+    <div class="shim"></div>
+    <%= flash[:notice] if flash[:notice] %>
+    <%= flash[:alert] if flash[:alert] %>
 
+    <div class="form-wrapper">
+      <%= render 'form' %>
+    </div>
 
+    <div class="form-wrapper">
+      <%= form_tag('/sessions', method: :post, id: 'sign-in-form') do %>
+        <p><%= text_field_tag 'email', nil, placeholder: 'Email', class: "form-control"%></p>
+        <p><%= password_field_tag 'password', nil, placeholder: 'Password', class: "form-control" %></p>
+        <p><%= submit_tag 'Sign In', class: 'submit-btn' %></p>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </section>
 
 </body>
 </html>

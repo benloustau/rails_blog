@@ -11,9 +11,17 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require normalize
  *= require_self
  */
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
+  height: 100%;
+  width: 100%;
   font-family: "Raleway", Helvetica;
   background-color: #f1f1f1;
   /*background: url(https://unsplash.imgix.net/45/eDLHCtzRR0yfFtU0BQar_sylwiabartyzel_themap.jpg?q=75&fm=jpg&auto=format&s=98e65d0d3f8fcc55b075259021149508) no-repeat center center fixed; 
@@ -30,9 +38,9 @@ h3 {
 
 .title {
   text-align: center;
-  position: fixed;
-  top: 20%;
-  left: 20%;
+  /* position: fixed; */
+  /* top: 20%; */
+  /* left: 20%; */
   color: #fff;
 }
 
@@ -43,7 +51,19 @@ h3 {
 .title p {
   font-size: 25px;
 }
+
 /*-----------nav------------------*/
+
+.shim {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(220, 220, 200, .4);
+}
+
 nav {
   padding: 5px;
   text-align: right;
@@ -152,10 +172,16 @@ a {
 
 /*----------------- forms----------------------*/
 
-.form-container {
-  width: 100%;
+.sign-up-form, #sign-in-form {
+  width: 30%;
   display: none;
-  position: fixed;
+  margin: 0 auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding-left: 70px;
+  background: rgba(220, 160, 160, .2);
 }
 
 .sign-up {
@@ -178,10 +204,6 @@ a {
   color: #fff;
 }
 
-#sign-in-form {
-  width: 30%;
-  display: none;
-}
 
 .post-form {
   width: 250px;
