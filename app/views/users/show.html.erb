@@ -4,8 +4,9 @@
   <div class="left-column">
     <div class="profile-container">
       <h3><%= @user.fname %>'s Profile Page</h3>
-      <p>Location: <%= @user.location %></p>
-      <div>Bio: <%= @user.bio %></div>
+      <div id="img"><%= image_tag(current_user.avatar.url) %></div>
+      <p><h3>Location:</h3> <%= @user.location %></p>
+      <div><h3>Bio:</h3> <%= @user.bio %> <br><br><%= button_to 'Edit Profile', edit_user_path, method: :get %></div>
     </div>
 
     <div class="post-container">
@@ -58,4 +59,9 @@
 
  
 </div>
+<!-- 
+<p>
+<%= link_to 'edit user', edit_user_path(@user) %> | 
+<%= link_to 'back to users', users_path %>
+</p> -->
 

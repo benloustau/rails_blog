@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 #----------- Users------------------
 
 user_1 = User.create do |a|
@@ -111,7 +112,7 @@ end
 
 post_6 = Post.create do |p|
 p.user_id = user_3.id
-p.body = "I hate @Aquavit twice last yeat and the diner menu is fantastic!"
+p.body = "I ate @Aquavit twice last yeat and the diner menu is fantastic!"
 end
 
 post_7 = Post.create do |p|
@@ -133,5 +134,3 @@ post_10 = Post.create do |p|
 p.user_id = user_5.id
 p.body = "New spots in Brooklyn make Great food at affordable price. HINT: CAFE MOGADOR!"
 end
-
-
