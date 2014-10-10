@@ -8,12 +8,10 @@
     <div class="left-column">
       <div class="profile-container">
         <h3><%= "Hello #{current_user.fname}" %></h3>
-        <div class="post-container">
+        <div>
           <%= form_for @post do |f| %>
-            <p><%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %></p>
-            <p><%= f.submit class: "submit-btn" %></p>
-
-
+            <%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %>
+            <%= f.submit class: "submit-btn", cursor: "pointer" %> 
           <% end %>
         </div>
       </div>
@@ -43,7 +41,7 @@
 
 
   <%else%>
-  <!-- if not logged in. -->
+    <!-- if not logged in. -->
     <div class="title">
       <h3>Been There?</h3>
       <p>A place to blog about about your favorite places to eat in the city!</p>
