@@ -9,6 +9,7 @@
 
 
     <span class="post-user-name">
+      <%= image_tag post.user.avatar.url(:small) %> |
       <%= link_to post.user.fullname, user_path(post.user.id) %>
     </span>
 
