@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy,:follow,:unfollow]
-	  # attr_accessible :avatar
- 	 # has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+	  
 	def index
 		@users = User.all
     @posts = Post.all
