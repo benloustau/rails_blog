@@ -4,7 +4,7 @@
   <div class="left-column">
     <div class="profile-container">
       <h3><%= @user.fname %>'s Profile Page</h3>
-      <div id="img"><%= image_tag @user.avatar.url(:medium) %></div>
+      <div id="img"><%= image_tag @user.avatar.url(:thumb) %></div>
       <p><h3>Location:</h3> <%= @user.location %></p>
       <div><h3>Bio:</h3> <%= @user.bio %> <br><br><%= button_to 'Edit Profile', edit_user_path, method: :get %></div>
     </div>
