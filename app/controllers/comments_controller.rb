@@ -3,10 +3,14 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new
-    @comment.body = params[:comment][:body]
-    @comment.user_id = current_user.id
-    @comment.post_id = params[:post_id]
-    @comment.save
+    
+    unless params[:comment][:body].empty?
+      @comment.body = params[:comment][:body]
+      @comment.user_id = current_user.id
+      @comment.post_id = params[:post_id]
+      @comment.save
+    end
+
     redirect_to users_path
   end
 
