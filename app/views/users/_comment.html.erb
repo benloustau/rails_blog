@@ -1,6 +1,6 @@
 <li class="comments">
   <div>
-    <span class="comments-name"><%= link_to comment.user.fullname, user_path(comment.user.id) %></span>
+    <span class="comments-name"><%= image_tag comment.user.avatar.url(:small) %> | <%= link_to comment.user.fullname, user_path(comment.user.id) %></span>
     <span class="comments-text"><%= comment.body %></span><br/>
     <span class="time-text">
       <%= comment.created_at.strftime("(commented at %I:%M%p on %m/%d/%Y)") %>
