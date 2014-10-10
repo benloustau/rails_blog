@@ -61,16 +61,15 @@ h3 {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(220, 220, 200, .4);
+  /*background: rgba(220, 220, 200, .4);*/
+  background: rgba(46, 20, 10, 0.1);
 }
 
 nav {
-/*  padding: 5px;
-*/  text-align: right;
-  background-color: rgba(0, 0, 0, .75);
+  text-align: right;
+  background-color: rgba(0, 0, 0, .7);
   height: 54px;
-/*  margin: -16px -8px 0px -8px;
-*/}
+}
 
 nav .login-link-wrapper {
   line-height: 54px;
@@ -191,17 +190,18 @@ a {
 
 /*----------------- forms----------------------*/
 
-.text_area{
-  width:300px;
-  height:100px;
-  border-radius: 5px;
-  border: none;
-  font-size: 12px;
-}
-
 /*.form-container {
   width: 100%;
   }*/
+
+.bio-text-area {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: 12px;
+}
 
 .sign-up-form, #sign-in-form {
   width: 30%;
@@ -212,7 +212,9 @@ a {
   left: 0;
   right: 0;
   padding-left: 70px;
-  background: rgba(220, 160, 160, .2);
+  /*background: rgba(220, 160, 160, .2);*/
+  background: rgba(62, 55, 57, 0.2);
+  border-radius: 4px;
 }
 
 .sign-up {
@@ -307,3 +309,53 @@ a {
   width: 75px;
   height:75px;
 }
+
+/*-------------------edit page--------------------*/
+
+.edit_user {
+  text-align: center;
+}
+
+.edit-title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.edit-submit-btn {
+  font-size: 16px;
+  border: none;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #000;
+  text-align: right;
+  padding:5px;
+}
+
+.edit-form-control {
+  width: 450px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.edit-text-area{
+  width:450px;
+  height:35px;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+}
+
+.edit-btn-container {
+  width: 75%;
+  text-align: right;
+}
+
+.placeholder-img {
+  width: 80px;
+  height: 80px;
+}
+

@@ -1,24 +1,29 @@
-<h1>Edit your profile below!</h1>
+<div class="wrapper">
+  <p class="edit-title">Edit your profile below!</p>
 
 <%= form_for @user, :html => { :multipart => true} do |f| %>
 
-    <div class="form-group">
-        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
-        <div class="col-sm-6">
-            <%= f.file_field :avatar %>
-        </div>
+  <div class="form-group">
+
+      <div>
+        <%= image_tag "placeholder.png", class: 'placeholder-img' %>
+        <%= f.file_field :avatar, class: 'edit-form-control', autofocus: true, placeholder: 'Profile Image' %>
+      </div>
+
     </div>
-     <p><%= f.text_field :fname, class: 'form-control', autofocus: true, placeholder: 'First Name'%></p>
-    <p><%= f.text_field :lname, class: 'form-control', autofocus: true, placeholder: 'Last Name' %></p>
-    <p><%= f.text_area :bio, class: 'text_area', autofocus: true, placeholder: 'Tell Us About You' %></p>
-    <p><%=f.text_field :location, class: 'form-control', autofocus: true, placeholder: 'Location' %></p>
-    <p><%= f.text_field :password, class: 'form-control', autofocus: true, placeholder: 'Password' %></p>
-    <p><%= f.text_field :email, class: 'form-control', autofocus: true, placeholder: 'Email' %></p>
-    <p><%= f.submit 'Edit Profile', class: 'submit-btn' %></p>
 
-<p>
-<%= link_to 'cancel', user_path(@user) %> | 
-<%= link_to 'back to users', users_path %>
-</p>
+    <p><%= f.text_field :fname, class: 'edit-form-control', autofocus: true, placeholder: 'First Name'%></p>
+    <p><%= f.text_field :lname, class: 'edit-form-control', autofocus: true, placeholder: 'Last Name' %></p>
+    <p><%= f.text_area :bio, class: 'edit-text-area', autofocus: true, placeholder: 'Tell Us About You' %></p>
+    <p><%=f.text_field :location, class: 'edit-form-control', autofocus: true, placeholder: 'Location' %></p>
+    <p><%= f.text_field :password, class: 'edit-form-control', autofocus: true, placeholder: 'Password' %></p>
+    <p><%= f.text_field :email, class: 'edit-form-control', autofocus: true, placeholder: 'Email' %></p>
+    <p class="edit-btn-container"><%= f.submit 'Edit Profile', class: 'edit-submit-btn' %></p>
 
-<%end%>
+    <p>
+      <%= link_to 'Cancel', user_path(@user) %> | 
+      <%= link_to 'Back', users_path %>
+    </p>
+
+  <%end%>
+</div>

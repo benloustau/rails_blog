@@ -16,6 +16,7 @@
         <% if current_user %>
             <span><%= link_to "Hello #{current_user.fname}", current_user %> |</span>
             <span><%= link_to "Home", users_path %> |</span>
+            <span><%= link_to "Edit", edit_user_path(current_user) %> |</span>
             <span><%= link_to "Sign out", logout_path, method: :delete %></span>
         <%else%>
             <span><%= link_to "Home", root_path %> |</span>

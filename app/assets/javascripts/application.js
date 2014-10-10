@@ -36,7 +36,20 @@ $(document).ready(function(){
 
   $('.post-form').click(function(){
     $(this).animate({
-        height: ($(this).height()==30) ? 100 : 30
+        height: ($(this).height()==35) ? 100 : 35
     });
   });
+
+  $('.edit-text-area').click(function(){
+    $(this).animate({
+      height: ($(this).height()==35) ? 100 : 35
+    });
+  });
+
+  $('.bio-text-area').click(function(){
+    $(this).animate({
+      height: ($(this).height()==35) ? 100 : 35
+    });
+  });
+
 });
