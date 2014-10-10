@@ -1,29 +1,28 @@
 <div class="wrapper">
-  <p class="edit-title">Edit your profile below!</p>
-
-<%= form_for @user, :html => { :multipart => true} do |f| %>
-
+  
   <div class="form-group">
+    <p class="edit-title">Edit your profile below!</p>
+
+      <%= form_for @user, :html => { :multipart => true} do |f| %>
 
       <div>
         <%= image_tag "placeholder.png", class: 'placeholder-img' %>
-        <%= f.file_field :avatar, class: '.edit-img-form' %>
+        <%= f.file_field :avatar, class: 'edit-img-form' %>
       </div>
 
-    </div>
+      <p><%= f.text_field :fname, class: 'edit-form-control', autofocus: true, placeholder: 'First Name'%></p>
+      <p><%= f.text_field :lname, class: 'edit-form-control', autofocus: true, placeholder: 'Last Name' %></p>
+      <p><%= f.text_area :bio, class: 'edit-text-area', autofocus: true, placeholder: 'Tell Us About You' %></p>
+      <p><%=f.text_field :location, class: 'edit-form-control', autofocus: true, placeholder: 'Location' %></p>
+      <p><%= f.text_field :password, class: 'edit-form-control', autofocus: true, placeholder: 'Password' %></p>
+      <p><%= f.text_field :email, class: 'edit-form-control', autofocus: true, placeholder: 'Email' %></p>
+      <p class="edit-btn-container"><%= f.submit 'Edit Profile', class: 'edit-submit-btn' %></p>
 
-    <p><%= f.text_field :fname, class: 'edit-form-control', autofocus: true, placeholder: 'First Name'%></p>
-    <p><%= f.text_field :lname, class: 'edit-form-control', autofocus: true, placeholder: 'Last Name' %></p>
-    <p><%= f.text_area :bio, class: 'edit-text-area', autofocus: true, placeholder: 'Tell Us About You' %></p>
-    <p><%=f.text_field :location, class: 'edit-form-control', autofocus: true, placeholder: 'Location' %></p>
-    <p><%= f.text_field :password, class: 'edit-form-control', autofocus: true, placeholder: 'Password' %></p>
-    <p><%= f.text_field :email, class: 'edit-form-control', autofocus: true, placeholder: 'Email' %></p>
-    <p class="edit-btn-container"><%= f.submit 'Edit Profile', class: 'edit-submit-btn' %></p>
+      <p>
+        <%= link_to 'Cancel', user_path(@user) %> | 
+        <%= link_to 'Back', users_path %>
+      </p>
 
-    <p>
-      <%= link_to 'Cancel', user_path(@user) %> | 
-      <%= link_to 'Back', users_path %>
-    </p>
-
-  <%end%>
+    <%end%>
+  </div>
 </div>

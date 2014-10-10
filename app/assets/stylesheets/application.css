@@ -24,7 +24,7 @@ body {
   width: 100%;
   font-family: "Raleway", Helvetica;
   /*background-color: #f1f1f1;*/
-  background: url(https://unsplash.imgix.net/7/color-correct-coffee.JPG?q=75&fm=jpg&auto=format&s=75a7775869653ca405f34df6ef0bc6b1) no-repeat center center fixed; 
+  background: url(http://www.marcforgione.com/wordpress/wp-content/gallery/homepage/pic_rest_6.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -62,7 +62,7 @@ h3 {
   bottom: 0;
   left: 0;
   /*background: rgba(220, 220, 200, .4);*/
-  background: rgba(46, 20, 10, 0.1);
+  background: rgba(30, 20, 10, 0.5);
 }
 
 nav {
@@ -213,9 +213,12 @@ a {
   right: 0;
   padding-left: 70px;
   /*background: rgba(220, 160, 160, .2);*/
-  background: rgba(62, 55, 57, 0.2);
+  /*background: rgba(62, 55, 57, 0.2);*/
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
 }
+
+
 
 .sign-up {
   text-align: left;
@@ -235,7 +238,7 @@ a {
   font-size: 16px;
   background: none;
   border: none;
-  color: #000;
+  color: #fff;
   width: 100%;
   text-align: right;
 }
@@ -322,6 +325,7 @@ a {
 .edit-title {
   text-align: center;
   font-size: 20px;
+  color: #fff;
 }
 
 .edit-submit-btn {
@@ -359,6 +363,7 @@ a {
   border: none;
   padding: 5px;
   font-size: 12px;
+  color: #fff;
 }
 .edit-btn-container {
   width: 75%;
@@ -369,4 +374,11 @@ a {
   width: 60px;
   height: 60px;
 }
+
+.form-group {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  padding-top: 15px;
+}
+
 
