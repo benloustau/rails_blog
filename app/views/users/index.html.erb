@@ -8,6 +8,8 @@
     <div class="left-column">
       <div class="profile-container">
         <h3><%= "Hello #{current_user.fname}" %></h3>
+        <div id="img"><%= image_tag current_user.avatar.url(:thumb) %></div>
+
         <div>
           <%= form_for @post do |f| %>
             <%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %>
