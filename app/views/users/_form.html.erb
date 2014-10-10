@@ -6,10 +6,10 @@
   		<l1><%= message %></l1>
   		<%end%>
   		</ul>
-  	<%end%>	
+  	<%end%>
     <p><%= f.text_field :fname, class: 'form-control', autofocus: true, placeholder: 'First Name'%></p>
     <p><%= f.text_field :lname, class: 'form-control', autofocus: true, placeholder: 'Last Name' %></p>
-    <p><%= f.text_field :bio, class: 'form-control', autofocus: true, placeholder: 'Tell Us About You' %></p>
+    <p><%= f.text_area :bio, class: 'text_area', autofocus: true, placeholder: 'Tell Us About You' %></p>
     <p><%=f.text_field :location, class: 'form-control', autofocus: true, placeholder: 'Location' %></p>
     <p><%= f.text_field :password, class: 'form-control', autofocus: true, placeholder: 'Password' %></p>
     <p><%= f.text_field :email, class: 'form-control', autofocus: true, placeholder: 'Email' %></p>

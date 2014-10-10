@@ -125,6 +125,13 @@ a {
 
 /*----------------- forms----------------------*/
 
+.text_area{
+  width:300px;
+  height:100px;
+  border-radius: 5px;
+  border: none;
+}
+
 .form-container {
   width: 100%;
   display: none;
@@ -194,4 +201,9 @@ a {
 /*----------------profile page-----------------*/
 .user-post {
   border-top: 1px solid grey;
+}
+
+#img{
+  width: 75px;
+  height:75px;
 }
