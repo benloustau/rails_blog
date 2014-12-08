@@ -13,7 +13,7 @@
         <div>
           <%= form_for @post do |f| %>
             <%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %>
-            <%= f.submit class: "submit-btn", cursor: "pointer" %> 
+            <%= f.submit "post", class: "submit-btn", cursor: "pointer" %> 
           <% end %>
         </div>
       </div>

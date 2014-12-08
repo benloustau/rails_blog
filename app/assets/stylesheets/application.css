@@ -236,12 +236,14 @@ a {
 }
 
 .submit-btn {
-  font-size: 16px;
+  font-size: 20px;
   background: none;
   border: none;
+  background-color: black;
+  margin-left:.6em;
   color: #fff;
-  width: 100%;
-  text-align: right;
+  width: 90%;
+  text-align: center;
 }
 
 .comment-form .submit-btn {
