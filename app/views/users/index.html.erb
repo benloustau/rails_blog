@@ -10,10 +10,10 @@
         <h3><%= "Hello #{current_user.fname}" %></h3>
         <div id="img"><%= image_tag current_user.avatar.url(:thumb) %></div>
 
-        <div>
+        <div class="post-container">
           <%= form_for @post do |f| %>
-            <%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %>
-            <%= f.submit "post", class: "submit-btn", cursor: "pointer" %> 
+          <p><%= f.text_area :body, class: 'post-form', autofocus: true, placeholder: 'Make a post...' %></p>
+          <p><%= f.submit "Post", class: "submit-btn", cursor: "pointer"%></p>
           <% end %>
         </div>
       </div>

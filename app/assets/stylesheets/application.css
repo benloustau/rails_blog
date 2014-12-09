@@ -239,9 +239,10 @@ a {
   font-size: 20px;
   background: none;
   border: none;
-  background-color: black;
+  border-radius: 2px;
+  background-color: rgba(100, 100, 100, .3);
   margin-left:.6em;
-  color: #fff;
+  color: black;
   width: 90%;
   text-align: center;
 }
